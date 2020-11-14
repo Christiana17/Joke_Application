@@ -1,2 +1,84 @@
-﻿Opening repositories:
-C:\Users\chris
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace JokeApp
+{
+    public partial class NameLabel : Form
+    {
+        private object DisplayText;
+
+        public NameLabel()
+        {
+            InitializeComponent();
+        }
+/* Event Handler presents written and visual joke options which are *contained in a Group box.
+*/
+        private void StartButton_Click(object sender, EventArgs e)
+        {
+            GroupBox_Jokes.Visible = true;
+            UsbJokeButton.Visible = true;
+            WrittenPepperJokeButton.Visible = true;
+            ResetButton.Visible = true;
+            LabelForName.Visible = false;
+            NameTextBox.Visible = false;
+            FromLabel.Visible = false;
+            FromTextBox.Visible = false;
+        }
+        //Event handler that shows the visual joke image and label
+        private void UsbJokeButton_Click(object sender, EventArgs e)
+        {
+            UsbJoke_Box.Visible = true;
+            ClickMe_Label.Visible = true;
+           
+        }
+        //Event handler that closes the form
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        //Event handler that resets the form
+        private void ResetButton_Click(object sender, EventArgs e)
+        {
+            WrittenPepperJokeLabel.Visible = false;
+            PepperPunchlineButton.Visible = false;
+            UsbJoke_Box.Visible = false;
+            ClickMe_Label.Visible = false;
+            Usb_Joke_Label.Visible= false;
+            LabelForName.Visible = true;
+            NameTextBox.Visible = true;
+            FromLabel.Visible = true;
+            FromTextBox.Visible = true;
+            NameTextBox.Text = "";
+            FromTextBox.Text = "";
+        }
+        //Event handler displays the punchline 
+       private void PepperPunchlineButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Gets jalapeño business!");
+        }
+/*Event handler that makes the WrittenJokeLabel and PunchlineButton *visible after selecting Written Joke.
+*/
+     private void WrittenPepperJokeButton_Click(object sender, EventArgs e)
+        {
+            WrittenPepperJokeLabel.Visible = true;
+            PepperPunchlineButton.Visible = true;
+        }
+//Event handler that presents the Visual Joke after clicking the picturebox
+        private void ClickMeButton_Click(object sender, EventArgs e)
+        {
+            Usb_Joke_Label.Text = "It's a USB!!";
+        }
+
+
+
+
+    }
+    }
+
